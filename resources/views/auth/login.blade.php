@@ -4,7 +4,7 @@
 
 <div class="flex justify-center">
     <div class="w-4/12 bg-white p-6 rounded-lg">
-        <div class="flex justify-center mb-6 pb-8">
+        <div class="flex justify-center mb-6 pb-8 pt-8">
               <img src="{{ asset('\img\logo.png' )}}" alt="" width="70" height="70" > 
         </div>
         @if(session('status'))

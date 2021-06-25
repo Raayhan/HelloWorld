@@ -27,13 +27,14 @@
                     <a href="" class="font-bold text-yellow-800">{{ $post->user->name }}</a>
                     <span class="text-gray-600 text-sm">-{{ $post->created_at->diffForHumans() }}</span>
                     <p class="mb-2">{{ $post->body }}</p>
-                    <div>
+                    @can('delete',$post)
                         <form action="{{ route('posts.destroy', $post) }}" method="post">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="text-blue-500"> Delete &nbsp;</button>
                         </form>
-                    </div>
+                    @endcan
+                    
                     <div class="flex items-center">
                         @auth
                             @if(!$post->likedBy(auth()->user()))

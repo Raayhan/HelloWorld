@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PostLikeController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,8 @@ Route::get ('/login',[LoginController::class,'index'])->name('login');
 Route::post ('/login',[LoginController::class,'login']);
 
 Route::post ('/logout',[LogoutController::class,'logout'])->name('logout');
+
+Route::get ('/users/{user:username}/posts',[ProfileController::class,'index'])->name('users.profile');
 
 Route::get ('/register',[RegisterController::class,'index'])->name('register');
 Route::post ('/register',[RegisterController::class,'register']);
